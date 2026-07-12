@@ -11,6 +11,10 @@ const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+[]{}<>?/";
 
 function generatePassword() {
+  let name = document.getElementById("name").value;
+  let random = maths.floor(math.random() * 1000);
+  let password = name+random +"@";
+  document.getElementById("password").value=password;
   let characters = "";
 
   if (uppercase.checked) characters += upperChars;
