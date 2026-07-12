@@ -1,66 +1,61 @@
-<div align="center">
-  <h1>🔐 Password Generator</h1>
-  <p>
-    A simple and responsive Password Generator built with HTML, CSS, and JavaScript.
-    Generate strong, secure, and customizable passwords instantly.
-  </p>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  <p>
-    <img src="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt="HTML">
-    <img src="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt="CSS">
-    <img src="https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript" alt="JavaScript">
-    <img src="https://img.shields.io/badge/Status-Live-success" alt="Status">
-  </p>
-</div>
+<body>
 
-<hr>
+    <div class="container">
+        <h1>🔐 Password Generator</h1>
 
-<h2>✨ Features</h2>
+        <div class="input-box">
+            <input type="text" id="password" placeholder="Generated Password" readonly>
+            <button onclick="copyPassword()">Copy</button>
+        </div>
 
-<ul>
-  <li>🔐 Generate strong and secure passwords</li>
-  <li>📏 Choose password length</li>
-  <li>🔠 Include uppercase letters</li>
-  <li>🔡 Include lowercase letters</li>
-  <li>🔢 Include numbers</li>
-  <li>🔣 Include special characters</li>
-  <li>📋 One-click copy to clipboard</li>
-  <li>📱 Responsive design</li>
-</ul>
+        <div class="options">
 
-<h2>🛠️ Technologies Used</h2>
+            <div class="option">
+                <label>Password Length</label>
+                <input type="number" id="length" value="12" min="4" max="30">
+            </div>
 
-<ul>
-  <li>HTML5</li>
-  <li>CSS3</li>
-  <li>JavaScript (ES6)</li>
-</ul>
+            <div class="option">
+                <label>Uppercase Letters</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
 
-<h2>📸 Screenshot</h2>
+            <div class="option">
+                <label>Lowercase Letters</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
 
-<img src="./assets/password-generator.png" alt="Password Generator Screenshot" width="800">
+            <div class="option">
+                <label>Numbers</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
 
-<h2>🚀 How to Run</h2>
+            <div class="option">
+                <label>Symbols</label>
+                <input type="checkbox" id="symbols" checked>
+            </div>
 
-<ol>
-  <li>Clone the repository</li>
-  <li>Open <code>index.html</code> in your browser</li>
-</ol>
+        </div>
 
-<h2>📂 Project Structure</h2>
+        <button class="generate-btn" onclick="generatePassword()">
+            Generate Password
+        </button>
 
-<pre>
-Password-Generator/
-│── index.html
-│── style.css
-│── script.js
-│── assets/
-│    └── password-generator.png
-└── README.md
-</pre>
+    </div>
 
-<h2>👨‍💻 Author</h2>
 
-<p>
-Made with ❤️ by <strong>Shashi Tiwari</strong>
-</p>
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
