@@ -21,9 +21,6 @@ A simple and responsive **Password Generator** built using **HTML, CSS, and Java
 
 ## 📸 Screenshot
 
-> Add your project screenshot here.
-
-```md
 ![Password Generator](assets/password-generator.png)
 ```
 
