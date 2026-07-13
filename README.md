@@ -21,7 +21,7 @@ A simple and responsive **Password Generator** built using **HTML, CSS, and Java
 
 ## 📸 Screenshot
 
-![Password Generator](assets/password-generator.png)
+![Password Generator](https://github.com/Shashi-code07/password-generator/blob/0be24f57f340f2e4aafce46a4fcf1db9d36996e6/passwordgenerator.png)
 ```
 
 ## 📂 Project Structure
