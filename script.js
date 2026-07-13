@@ -11,37 +11,54 @@ const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+[]{}<>?/";
 
 function generatePassword() {
-  let name = document.getElementById("name").value;
-  let random = maths.floor(math.random() * 1000);
-  let password = name+random +"@";
-  document.getElementById("password").value=password;
-  let characters = "";
+    let name = document.getElementById("name").value.trim();
+    let length = parseInt(lengthInput.value);
 
-  if (uppercase.checked) characters += upperChars;
-  if (lowercase.checked) characters += lowerChars;
-  if (numbers.checked) characters += numberChars;
-  if (symbols.checked) characters += symbolChars;
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
 
-  if (characters === "") {
-    alert("Please select at least one option!");
-    return;
-  }
+    let characters = "";
 
-  let password = "";
-  const length = parseInt(lengthInput.value);
+    // Name ko checkbox ke hisaab se convert karo
+    if (uppercase.checked && !lowercase.checked) {
+        name = name.toUpperCase();
+    } else if (lowercase.checked && !uppercase.checked) {
+        name = name.toLowerCase();
+    }
 
-  for (let i = 0; i < length; i++) {
-    password += characters.charAt(
-      Math.floor(Math.random() * characters.length)
-    );
-  }
+    if (uppercase.checked) characters += upperChars;
+    if (lowercase.checked) characters += lowerChars;
+    if (numbers.checked) characters += numberChars;
+    if (symbols.checked) characters += symbolChars;
 
-  passwordBox.value = password;
+    if (characters === "") {
+        alert("Please select at least one option!");
+        return;
+    }
+
+    if (length < name.length) {
+        alert("Password length should be greater than the name length.");
+        return;
+    }
+
+    let password = name;
+
+    while (password.length < length) {
+        password += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+        );
+    }
+
+    passwordBox.value = password;
 }
-
 function copyPassword() {
-  if (passwordBox.value === "") return;
+    if (passwordBox.value === "") {
+        alert("Generate a password first!");
+        return;
+    }
 
-  navigator.clipboard.writeText(passwordBox.value);
-  alert("Password copied!");
+    navigator.clipboard.writeText(passwordBox.value);
+    alert("Password copied!");
 }
